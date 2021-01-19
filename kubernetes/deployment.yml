@@ -1,32 +1,24 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: match-test
+  name: match
   labels:
-    app: match-test
+    app: match
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: match-test
+      app: match
   template:
     metadata:
       labels:
-        app: match-test
+        app: match
     spec:
       containers:
         - name: match-test
-          image: skcc03.azurecr.io/match-test:latest
+          image: skcc03.azurecr.io/match:latest
           ports:
             - containerPort: 8080
-          readinessProbe:
-            httpGet:
-              path: '/actuator/health'
-              port: 8080
-            initialDelaySeconds: 10
-            timeoutSeconds: 2
-            periodSeconds: 5
-            failureThreshold: 10
           livenessProbe:
             httpGet:
               path: '/actuator/health'
