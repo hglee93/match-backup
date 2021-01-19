@@ -12,6 +12,7 @@ import java.util.List;
 public class Match {
 
     @Id
+    @GeneratedValue(strategy=GenerationType.AUTO)
     private Long id;
     private Integer price;
     private String status;
