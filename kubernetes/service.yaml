@@ -1,12 +1,12 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: match-test
+  name: match
   labels:
-    app: match-test
+    app: match
 spec:
   ports:
     - port: 8080
       targetPort: 8080
   selector:
-    app: match-test
+    app: match
