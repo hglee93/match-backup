@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: match
+  name: match-test
   labels:
-    app: match
+    app: match-test
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: match
+      app: match-test
   template:
     metadata:
       labels:
-        app: match
+        app: match-test
     spec:
       containers:
-        - name: match
+        - name: match-test
           image: skcc03.azurecr.io/match-test:latest
           ports:
             - containerPort: 8080
