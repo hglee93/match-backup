@@ -15,8 +15,8 @@ spec:
         app: match
     spec:
       containers:
-        - name: match-test
-          image: skcc03.azurecr.io/match:latest
+        - name: match
+          image: skcc03.azurecr.io/match-test:latest
           ports:
             - containerPort: 8080
           livenessProbe:
